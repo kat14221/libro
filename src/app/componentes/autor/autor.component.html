@@ -1,0 +1,13 @@
+<app-nabvar></app-nabvar>
+<div class="container d-flex flex-row mt-5 justify-content-between">
+    <div *ngFor="let item of autores" class="card" style="width: 18rem;">
+        <img src="{{item.foto}}" class="card-img-top" alt="..." width="100" height="230">
+        <div class="card-body">
+        <h5 class="card-title">{{item.nombres}} {{item.apellidos}}</h5>
+        <p class="card-text">{{item.estado}}</p>
+        <p class="card-text"><strong>Pais: </strong>{{item.pais}}</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+  
+</div>

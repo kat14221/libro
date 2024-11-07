@@ -1,0 +1,30 @@
+<div class="container mx-auto p-4">
+    <h2 class="text-3xl font-semibold mb-6">Lista de Libros</h2>
+    <button (click)="addLibro()" class="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-all mb-4">
+      Agregar Libro
+    </button>
+    <table class="table-auto w-full bg-white rounded-lg shadow">
+      <thead>
+        <tr class="bg-blue-600 text-white">
+          <th class="px-4 py-2">ID</th>
+          <th class="px-4 py-2">Título</th>
+          <th class="px-4 py-2">Edición</th>
+          <th class="px-4 py-2">Páginas</th>
+          <th class="px-4 py-2">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let libro of libros" class="border-b hover:bg-gray-100 transition">
+          <td class="px-4 py-2 text-center">{{ libro.id }}</td>
+          <td class="px-4 py-2">{{ libro.titulo }}</td>
+          <td class="px-4 py-2">{{ libro.edicion }}</td>
+          <td class="px-4 py-2 text-center">{{ libro.paginas }}</td>
+          <td class="px-4 py-2 flex justify-center gap-2">
+            <button (click)="editLibro(libro.id)" class="bg-yellow-400 text-white py-1 px-3 rounded hover:bg-yellow-500 transition">Editar</button>
+            <button (click)="deleteLibro(libro.id)" class="bg-red-500 text-white py-1 px-3 rounded hover:bg-red-600 transition">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
